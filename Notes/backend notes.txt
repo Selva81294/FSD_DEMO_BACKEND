@@ -1,0 +1,65 @@
+//Full stack demo: (refer class March 2)
+//Students Interview Questions App
+
+//Required DB content:
+Users=> username, email, password, content
+Contents=> company name, job role, data, package, questions
+
+//Required packages for backend:
+give npm init in terminal => then install accordingly;
+1. mongodb 
+2. mongoose
+3. jwt
+4. bcrypt
+5. cors
+6. express
+7. dotenv
+8. nodemon
+
+//create database in mongodb atlas
+1. create new project (name: Interview)
+2. then goto database access => username: selva, password: selva123
+3. then select "atlas admin" in "built-in role"
+4. then goto network access => add IP address => select allow access from anywhere => click confirm
+5. then goto database => click build database => selete free server, aws, mumbai, clustur 0 then click create
+ and select "my local environment" then click "finish and close"
+6. database created then click connect and select connect with applications
+7. finally u got ur mongo URL
+
+//Mongo db connections
+* store this Mongo URL & PORT in .env and start moongoose connection in db.js
+
+//index.js
+* call mangoose connection here
+* config dotenv
+* use required middlewares
+* finally start server in required PORT using app.listen
+
+//create mongoose schema
+* open model folder => create user.js folder => create userSchema
+* create content.js folder => create contentSchema
+* token generation function also can be write user.js and export
+* then use this token in signup & login routes
+
+//create routes
+* create route folder => then inside create signupuser.js, loginUser.js & content.js
+* then create routers for signup, login and content
+* then incorporate in index.js as middlewares(app.use)
+
+//create controllers
+(token generation function in models=>user.js)
+* create auth.js => here token authorization function is written
+* then use this function as middlewares in index.js(contentRouter)
+
+//for password encrypt purpose use bcrypt:
+    * bcrypt.genSalt, bcrypt.hash ===> used in signup process
+    * bcrypt.compare ===> used in login process
+
+//for decrypt purpose use jwt:
+    * for token generation use jwt.sign(unique_id, secret_key) ===> used in models/user.js
+    * for token verification use jwt.verify(generated token, secret_key) ===> used in controllers/auth.js
+
+
+
+
+
