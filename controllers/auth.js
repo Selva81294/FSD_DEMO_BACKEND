@@ -10,7 +10,7 @@ const isSignedIn = async(req,res,next)=>{
             token = req.headers["x-auth-token"];
             const decode = jwt.verify(token, process.env.SECERT_KEY);
             // console.log(decode)
-            // req.user = await User.findById(decode.id);
+            req.user = await User.findById(decode.id).select("-password")
             next();
         }
      catch (error) {

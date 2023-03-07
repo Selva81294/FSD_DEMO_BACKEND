@@ -1,4 +1,3 @@
-import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 const {ObjectId} = mongoose.Schema
 
@@ -13,8 +12,7 @@ const contentSchema = new mongoose.Schema(
             required: true
         },
         date : {
-            type : Date,
-            default : Date.now()
+            type : String
         },
         package : {
             type : String,

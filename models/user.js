@@ -18,10 +18,6 @@ const userSchema = new mongoose.Schema(
         password: {
             type : String,
             required : true
-        },
-        content: {
-            type : Array,
-            default : []
         }
     }
 )
