@@ -4,7 +4,7 @@ import { User } from '../models/user.js';
 
 const router = express.Router();
 
-//get all content
+//get all contents
 router.get("/allcontent", async (req,res)=>{
     try {
         const content = await Content.find().populate("user","username")
