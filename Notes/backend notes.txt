@@ -62,4 +62,3 @@ give npm init in terminal => then install accordingly;
 
 
 
-
